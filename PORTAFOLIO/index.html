@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Quezada G. | Desarrollador Frontend (UI/UX)</title>
+    <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/code.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWtXhlLqA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand glowing-text" href="#profile">Samuel Quezada G.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#profile">🔥 Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">🎓 Experiencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#technologies">🛠 Tecnologías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">🚀 Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#videos">🎬 Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">📩 Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-link nav-link theme-toggle-btn" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5 pt-5">
+
+        <section id="profile" class="text-center py-5 fade-in">
+            <h2 class="display-4 glowing-text">Desarrollador Frontend (UI/UX)</h2>
+            <div class="profile-img-container mx-auto my-4 heart-beat-animation">
+                <img src="f5a359e8-c3f4-4c54-a082-0aa8d9529cc0.png" alt="Samuel Quezada G." class="img-fluid rounded-circle profile-img glowing-border">
+            </div>
+            <h1 class="display-5 glowing-text">Samuel Quezada G.</h1>
+            <p class="lead profile-bio">👨‍💻 Ingeniero en Sistemas y Computación | 💾 Programación | 🌐 Frontend y Backend </p>
+        </section>
+
+        <hr class="separator">
+
+        <section id="experience" class="py-5">
+            <h2 class="text-center mb-5 glowing-text">Experiencia Profesional</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 glowing-card animate-on-scroll">
+                        <div class="card-body">
+                            <h5 class="card-title">Empresa Tech A</h5>
+                            <p class="card-text">Tecnologías: Frontend (React, Angular), Backend (Node.js), Bases de Datos (MongoDB)</p>
+                            <p class="card-text"><small class="text-muted">2020 - 2022</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 glowing-card animate-on-scroll">
+                        <div class="card-body">
+                            <h5 class="card-title">Startup Innovadora B</h5>
+                            <p class="card-text">Tecnologías: Frontend (Vue.js), UI/UX Design (Figma), Data Analytics (Python, Power BI)</p>
+                            <p class="card-text"><small class="text-muted">2022 - 2024</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 glowing-card animate-on-scroll">
+                        <div class="card-body">
+                            <h5 class="card-title">Consultora C</h5>
+                            <p class="card-text">Tecnologías: Full Stack (Django, React), Cloud Computing (AWS), DevOps</p>
+                            <p class="card-text"><small class="text-muted">2024 - Presente</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separator">
+
+        <section id="technologies" class="py-5 text-center">
+            <h2 class="mb-5 glowing-text">Stack Tecnológico</h2>
+            <div class="d-flex flex-wrap justify-content-center gap-4">
+                <div class="tech-icon-container animate-on-scroll">
+                    <i class="fab fa-html5 fa-4x text-primary tech-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="HTML5"></i>
+                    <p class="tech-name">HTML5</p>
+                </div>
+                <div class="tech-icon-container animate-on-scroll">
+                    <i class="fab fa-css3-alt fa-4x text-info tech-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="CSS3"></i>
+                    <p class="tech-name">CSS3</p>
+                </div>
+                <div class="tech-icon-container animate-on-scroll">
+                    <i class="fab fa-js fa-4x text-warning tech-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="JavaScript"></i>
+                    <p class="tech-name">JavaScript</p>
+                </div>
+                <div class="tech-icon-container animate-on-scroll">
+                    <i class="fab fa-bootstrap fa-4x text-purple tech-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Bootstrap"></i>
+                    <p class="tech-name">Bootstrap</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separator">
+
+        <section id="projects" class="py-5">
+            <h2 class="text-center mb-5 glowing-text">Proyectos</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 glowing-card animate-on-scroll">
+                        <img src="https://via.placeholder.com/400x250/FF0000/FFFFFF?text=Proyecto+Web+App" class="card-img-top glowing-border" alt="Proyecto Web App">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Web App de Gestión</h5>
+                            <p class="card-text">Aplicación web completa para la gestión de tareas y proyectos, desarrollada con React y Node.js.</p>
+                            <div class="mt-auto text-center">
+                                <a href="#" class="btn btn-primary glowing-button">Ver</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 glowing-card animate-on-scroll">
+                        <img src="https://via.placeholder.com/400x250/00FF00/000000?text=E-commerce+Moderno" class="card-img-top glowing-border" alt="E-commerce Moderno">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">E-commerce Moderno</h5>
+                            <p class="card-text">Plataforma de comercio electrónico con diseño intuitivo y funcionalidades avanzadas de compra.</p>
+                            <div class="mt-auto text-center">
+                                <a href="#" class="btn btn-primary glowing-button">Ver</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 glowing-card animate-on-scroll">
+                        <img src="https://via.placeholder.com/400x250/0000FF/FFFFFF?text=Landing+Page+Creativa" class="card-img-top glowing-border" alt="Landing Page Creativa">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Landing Page Creativa</h5>
+                            <p class="card-text">Diseño y desarrollo de una landing page interactiva con animaciones y efectos visuales.</p>
+                            <div class="mt-auto text-center">
+                                <a href="#" class="btn btn-primary glowing-button">Ver</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separator">
+
+        <section id="videos" class="py-5">
+            <h2 class="text-center mb-5 glowing-text">Videos</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 glowing-card animate-on-scroll">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="YouTube video player 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Introducción a UI/UX</h5>
+                            <p class="card-text">Un video que explica los fundamentos del diseño de interfaz de usuario y experiencia de usuario.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 glowing-card animate-on-scroll">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="YouTube video player 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Desarrollo Web con React</h5>
+                            <p class="card-text">Tutorial paso a paso sobre cómo construir aplicaciones web modernas con React.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 glowing-card animate-on-scroll">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="YouTube video player 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Patrones de Diseño en JavaScript</h5>
+                            <p class="card-text">Exploración de patrones de diseño esenciales para escribir código JavaScript más robusto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separator">
+
+        <section id="contact" class="py-5">
+            <h2 class="text-center mb-5 glowing-text">Contacto</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form class="glowing-card p-4 animate-on-scroll">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="tu.email@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Tu mensaje aquí" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary glowing-button">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer mt-auto py-4 text-center custom-footer">
+        <div class="container">
+            <span class="text-muted glowing-text">&copy; 2025 Samuel Quezada G. Todos los derechos reservados.</span>
+            <div class="social-icons mt-3">
+                <a href="https://github.com/tu-usuario" target="_blank" class="social-icon glowing-text"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="social-icon glowing-text"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://twitter.com/tu-usuario" target="_blank" class="social-icon glowing-text"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+        // Inicializar tooltips de Bootstrap
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+</body>
+</html>
