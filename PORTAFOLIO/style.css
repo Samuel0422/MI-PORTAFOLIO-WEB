@@ -1,394 +1,276 @@
-/* Variables CSS para Temas */
+/*
+ * Archivo: style.css
+ * Descripción: Contiene los estilos CSS para el portafolio web.
+ * Define variables CSS para el tema, estilos generales, y estilos específicos para cada sección.
+ * Incluye transiciones suaves para el cambio de tema y animaciones para elementos clave.
+ */
+
+/* ====================================
+   Variables CSS para Temas (Dark/Light)
+   ==================================== */
 :root {
-    /* Variables de Tema Oscuro por defecto */
-    --bg-color: #121212; /* Fondo predominante */
-    --text-color: #ffffff; /* Texto principal */
-    --primary-color: #ff0000; /* Color principal (rojo) para detalles */
-    --secondary-text-color: #cccccc; /* Texto secundario */
-    --card-bg: #1e1e1e; /* Fondo de tarjetas */
-    --navbar-bg: #1a1a1a; /* Fondo de la barra de navegación */
-    --footer-bg: #1a1a1a; /* Fondo del pie de página */
-    --input-bg: #2b2b2b; /* Fondo de campos de entrada */
-    --input-border: #444444; /* Borde de campos de entrada */
-    --glowing-border-color: #ff0000; /* Color del borde luminoso */
-    --glowing-shadow-color: rgba(255, 0, 0, 0.6); /* Sombra del borde luminoso */
-    --hr-color: rgba(255, 255, 255, 0.1); /* Color de la línea divisoria */
+    /* Variables para el Modo Oscuro por defecto */
+    --bg-color: #121212; /* Fondo principal oscuro */
+    --text-color: #ffffff; /* Color de texto claro */
+    --heading-color: #ffffff; /* Color de encabezados */
+    --navbar-bg: #1a1a1a; /* Fondo del navbar */
+    --card-bg: #1f1f1f; /* Fondo de tarjetas */
+    --border-color: rgba(255, 0, 0, 0.7); /* Rojo para bordes luminosos (con transparencia) */
+    --box-shadow-color: rgba(255, 0, 0, 0.4); /* Sombra para bordes luminosos */
+    --button-bg: #ff0000; /* Fondo de botones primarios */
+    --button-text: #ffffff; /* Texto de botones primarios */
+    --footer-bg: #1a1a1a; /* Fondo del footer */
+    --input-bg: #2b2b2b; /* Fondo de campos de formulario */
+    --input-text: #ffffff; /* Texto de campos de formulario */
+    --icon-color: #ffffff; /* Color general de iconos */
+
+    /* Colores específicos para tecnologías */
+    --html-color: #e34c26;
+    --css-color: #264de4;
+    --js-color: #f0db4f;
+    --bootstrap-color: #7952b3;
+
+    /* Transición para el cambio de tema */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Variables para Tema Claro */
+/* Variables para el Modo Claro (cuando data-theme="light" está activo) */
 [data-theme="light"] {
-    --bg-color: #f9f9f9;
-    --text-color: #000000;
-    --primary-color: #ff0000;
-    --secondary-text-color: #555555;
-    --card-bg: #ffffff;
-    --navbar-bg: #f0f0f0;
-    --footer-bg: #f0f0f0;
-    --input-bg: #ffffff;
-    --input-border: #dddddd;
-    --glowing-border-color: #ff0000;
-    --glowing-shadow-color: rgba(255, 0, 0, 0.3);
-    --hr-color: rgba(0, 0, 0, 0.1);
+    --bg-color: #f9f9f9; /* Fondo principal claro */
+    --text-color: #000000; /* Color de texto oscuro */
+    --heading-color: #333333; /* Color de encabezados */
+    --navbar-bg: #ffffff; /* Fondo del navbar */
+    --card-bg: #ffffff; /* Fondo de tarjetas */
+    --border-color: rgba(255, 0, 0, 0.5); /* Rojo para bordes (menos intenso en light mode) */
+    --box-shadow-color: rgba(255, 0, 0, 0.2); /* Sombra para bordes (menos intenso) */
+    --button-bg: #ff0000; /* Fondo de botones primarios */
+    --button-text: #ffffff; /* Texto de botones primarios */
+    --footer-bg: #ffffff; /* Fondo del footer */
+    --input-bg: #f0f0f0; /* Fondo de campos de formulario */
+    --input-text: #000000; /* Texto de campos de formulario */
+    --icon-color: #333333; /* Color general de iconos */
 }
 
-/* Estilos Globales y de Transición */
+/* ====================================
+   Estilos Generales
+   ==================================== */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.5s ease, color 0.5s ease;
-    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
-    display: flex;
-    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color); /* Usa la variable de fondo */
+    color: var(--text-color); /* Usa la variable de color de texto */
+    transition: var(--transition); /* Aplica la transición definida en las variables */
 }
 
-main {
-    flex-grow: 1; /* Permite que el contenido principal ocupe el espacio restante */
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--primary-color);
-    opacity: 0.8;
-}
-
+/* Asegura que los títulos también usen la variable de color */
 h1, h2, h3, h4, h5, h6 {
-    color: var(--text-color);
-    transition: color 0.3s ease;
+    color: var(--heading-color);
 }
 
-p {
-    color: var(--secondary-text-color);
-    transition: color 0.3s ease;
-}
-
-/* Navbar */
-.custom-navbar {
+/* Estilos para el Navbar */
+.navbar {
     background-color: var(--navbar-bg);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil para el navbar */
+    border-bottom: 1px solid var(--border-color); /* Borde inferior */
+    box-shadow: 0 2px 10px var(--box-shadow-color); /* Sombra sutil */
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.custom-navbar .nav-link {
-    color: var(--text-color);
-    font-weight: 600;
+.navbar-brand, .nav-link {
+    color: var(--text-color) !important; /* Texto del navbar */
     transition: color 0.3s ease;
 }
 
-.custom-navbar .nav-link:hover {
-    color: var(--primary-color);
+.nav-link:hover {
+    color: var(--button-bg) !important; /* Color al pasar el mouse */
 }
 
-.custom-navbar .navbar-brand {
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: var(--primary-color); /* Asegura que el brand también cambie de color */
-    transition: color 0.3s ease;
-}
-
-.custom-navbar .navbar-toggler {
-    border-color: var(--primary-color);
-}
-
-.custom-navbar .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    transition: background-image 0.3s ease;
-}
-
-[data-theme="light"] .custom-navbar .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23000000' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Glowing text */
-.glowing-text {
-    text-shadow: 0 0 8px var(--glowing-shadow-color), 0 0 15px var(--glowing-shadow-color);
-    transition: text-shadow 0.3s ease;
-}
-
-/* Separador con brillo sutil */
-.separator {
+/* Estilo para el botón de alternancia de tema en el navbar */
+#theme-toggle {
+    color: var(--icon-color);
+    font-size: 1.2rem;
+    background: none;
     border: none;
-    height: 1px;
-    background-color: var(--hr-color);
-    margin: 4rem 0;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2); /* Sombra roja sutil para el separador */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-/* Sección Perfil */
-.profile-img-container {
+#theme-toggle:hover {
+    color: var(--button-bg);
+}
+
+/* ====================================
+   Sección Perfil
+   ==================================== */
+.profile-image-container {
     width: 200px;
     height: 200px;
-    position: relative;
     border-radius: 50%;
     overflow: hidden;
-    /* Transición suave para el tamaño */
-    transition: transform 0.3s ease-in-out;
+    position: relative;
+    box-shadow: 0 0 15px var(--box-shadow-color); /* Sombra luminosa */
+    border: 3px solid var(--border-color); /* Borde luminoso */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .profile-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    animation: pulse 2s infinite ease-in-out; /* Animación de latido */
 }
 
-/* Animación de latido */
-@keyframes heartBeat {
+/* Animación de latido suave */
+@keyframes pulse {
     0% { transform: scale(1); }
-    14% { transform: scale(1.05); }
-    28% { transform: scale(1); }
-    42% { transform: scale(1.05); }
-    70% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
-.heart-beat-animation {
-    animation: heartBeat 4s infinite ease-in-out;
+/* ====================================
+   Estilos de Tarjetas (Cards)
+   ==================================== */
+.card {
+    background-color: var(--card-bg); /* Fondo de tarjeta */
+    color: var(--text-color); /* Color de texto en tarjeta */
+    border: 1px solid var(--border-color); /* Borde luminoso */
+    box-shadow: 0 4px 15px var(--box-shadow-color); /* Sombra luminosa */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que el contenido respete los bordes redondeados */
 }
 
-/* Bordes Luminosos (aplicado a imágenes, tarjetas, etc.) */
-.glowing-border {
-    border: 3px solid transparent; /* Borde transparente por defecto */
-    border-image: linear-gradient(45deg, var(--primary-color), var(--glowing-shadow-color)) 1;
-    box-shadow: 0 0 15px var(--glowing-shadow-color);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+.card:hover {
+    transform: translateY(-5px); /* Pequeña elevación al pasar el mouse */
+    box-shadow: 0 8px 25px var(--box-shadow-color); /* Sombra más intensa al pasar el mouse */
 }
 
-/* Estilo para tarjetas con brillo */
-.glowing-card {
+/* Estilos específicos para la sección Experiencia */
+.experience-card .card-body h5 {
+    color: var(--heading-color);
+}
+.experience-card .card-body p {
+    color: var(--text-color);
+}
+
+/* Estilos específicos para la sección Proyectos */
+.project-card .card-img-top {
+    border-bottom: 1px solid var(--border-color);
+    transition: border-color 0.3s ease;
+}
+
+.project-card .card-body h5 {
+    color: var(--heading-color);
+}
+.project-card .card-body p {
+    color: var(--text-color);
+}
+
+/* Estilos específicos para la sección Videos */
+.video-card .card-body h5 {
+    color: var(--heading-color);
+}
+.video-card .card-body p {
+    color: var(--text-color);
+}
+
+/* ====================================
+   Sección Tecnologías
+   ==================================== */
+.technology-item {
     background-color: var(--card-bg);
-    border: 1px solid var(--input-border);
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px var(--box-shadow-color);
     transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    position: relative;
+    border-radius: 8px;
 }
 
-.glowing-card:hover {
-    transform: translateY(-5px); /* Pequeño levantamiento al pasar el mouse */
-    box-shadow: 0 8px 25px var(--glowing-shadow-color); /* Sombra más pronunciada */
-    border-color: var(--primary-color);
+.technology-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--box-shadow-color);
 }
 
-/* Efecto de borde luminoso para tarjetas */
-.glowing-card::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, var(--primary-color), var(--glowing-shadow-color));
-    z-index: -1;
-    filter: blur(10px); /* Desenfoque para el efecto de brillo */
-    opacity: 0; /* Oculto por defecto */
-    transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
-    border-radius: 0.5rem; /* Ajustar el radio del borde para que coincida con la tarjeta */
+.technology-item i {
+    color: var(--icon-color); /* Color por defecto, se sobrescribe por clases de color */
+    transition: color 0.3s ease;
 }
 
-.glowing-card:hover::before {
-    opacity: 1; /* Aparece al pasar el mouse */
-    filter: blur(15px); /* Más desenfoque al pasar el mouse */
+/* Colores específicos para los iconos de tecnología */
+.text-orange { color: var(--html-color); }
+.text-primary { color: var(--css-color); } /* Bootstrap usa text-primary, sobrescribimos aquí */
+.text-warning { color: var(--js-color); }
+.text-purple { color: var(--bootstrap-color); }
+
+/* ====================================
+   Sección Contacto (Formulario)
+   ==================================== */
+.contact-form {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px var(--box-shadow-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Estilo para los botones */
-.glowing-button {
-    background-color: var(--primary-color);
-    border: none;
+.form-label {
     color: var(--text-color);
-    padding: 10px 20px;
-    border-radius: 0.3rem;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-.glowing-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, var(--primary-color), var(--glowing-shadow-color));
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    filter: blur(8px);
-}
-
-.glowing-button:hover {
-    box-shadow: 0 0 20px var(--glowing-shadow-color);
-    transform: translateY(-2px);
-}
-
-.glowing-button:hover::before {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-/* Sección Tecnologías */
-.tech-icon-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    border-radius: 0.5rem;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    background-color: var(--card-bg); /* Fondo para los íconos */
-    border: 1px solid var(--input-border);
-}
-
-.tech-icon-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    border-color: var(--primary-color); /* Borde al pasar el mouse */
-}
-
-.tech-icon {
-    font-size: 4rem; /* Ajusta el tamaño de los íconos */
-    margin-bottom: 10px;
-    color: var(--primary-color); /* Color de los íconos */
-    transition: color 0.3s ease;
-}
-
-/* Colores específicos para íconos de tecnología (para visualización en modo claro/oscuro) */
-.fa-html5 { color: #E34F26 !important; }
-.fa-css3-alt { color: #1572B6 !important; }
-.fa-js { color: #F7DF1E !important; }
-.fa-bootstrap { color: #7952B3 !important; } /* Un poco más morado para Bootstrap */
-
-.tech-name {
-    font-weight: 600;
-    color: var(--secondary-text-color);
-    transition: color 0.3s ease;
-}
-
-/* Contacto - Estilo del formulario */
-#contact .form-control {
+.form-control {
     background-color: var(--input-bg);
-    color: var(--text-color);
-    border: 1px solid var(--input-border);
+    color: var(--input-text);
+    border: 1px solid var(--border-color);
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-#contact .form-control:focus {
+.form-control:focus {
     background-color: var(--input-bg);
-    color: var(--text-color);
-    border-color: var(--primary-color);
+    color: var(--input-text);
+    border-color: var(--button-bg);
     box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.25);
 }
 
-#contact .form-label {
-    color: var(--secondary-text-color);
+.btn-primary {
+    background-color: var(--button-bg);
+    border-color: var(--button-bg);
+    color: var(--button-text);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--button-bg), 10%); /* Oscurece el rojo al pasar el mouse */
+    border-color: darken(var(--button-bg), 10%);
+}
+
+/* ====================================
+   Footer
+   ==================================== */
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.footer .social-icons a {
+    color: var(--icon-color);
     transition: color 0.3s ease;
 }
 
-/* Footer */
-.custom-footer {
-    background-color: var(--footer-bg);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil para el footer */
+.footer .social-icons a:hover {
+    color: var(--button-bg);
 }
 
-.social-icons .social-icon {
-    color: var(--text-color);
-    margin: 0 10px;
-    font-size: 1.8rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-icons .social-icon:hover {
-    color: var(--primary-color);
-    transform: translateY(-3px);
-}
-
-/* Animaciones suaves al cargar la página y al hacer scroll */
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1s forwards ease-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-on-scroll.in-view {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Botón de alternancia de tema */
-.theme-toggle-btn {
-    font-size: 1.5rem;
-    color: var(--text-color);
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.theme-toggle-btn:hover {
-    color: var(--primary-color);
-    transform: scale(1.1);
-}
-
-/* Media Queries para Responsividad */
+/* ====================================
+   Estilos Responsive
+   ==================================== */
+/* No se necesitan media queries complejas adicionales gracias a Bootstrap */
+/* Ajustes menores si es necesario */
 @media (max-width: 768px) {
-    .profile-img-container {
-        width: 150px;
-        height: 150px;
+    .display-4 {
+        font-size: 2.5rem; /* Ajusta tamaño de encabezados en móviles */
     }
-
-    .display-4, .display-5 {
-        font-size: 2rem;
-    }
-
     .lead {
         font-size: 1rem;
     }
-
-    .tech-icon {
-        font-size: 3rem;
-    }
-
-    .separator {
-        margin: 2rem 0;
-    }
-}
-
-@media (max-width: 576px) {
-    .custom-navbar .navbar-brand {
-        font-size: 1.5rem;
-    }
-
-    .custom-navbar .nav-link {
-        text-align: center;
-    }
-
-    .glowing-text {
-        font-size: 1.8rem;
-    }
-
-    .profile-img-container {
-        width: 120px;
-        height: 120px;
-    }
-
-    .social-icons .social-icon {
-        font-size: 1.5rem;
+    .navbar-brand {
+        font-size: 1.2rem;
     }
 }
